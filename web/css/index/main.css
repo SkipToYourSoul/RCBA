@@ -1,0 +1,28 @@
+body {
+    padding-top: 70px;
+    min-width: 1000px;
+    /*width:expression(document.body.clientWidth < 1000? "1000px": "auto" );*/
+    position:relative;
+}
+
+.pre-scrollable {
+    max-height: 450px;
+    overflow-y: scroll;
+}
+
+.pre-scrollable-search {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.index-panel {
+    min-width: 800px;
+}
+
+.index-tag {
+    margin-bottom: 15px;
+}
+
+.index-chart {
+    height: 400px;
+}

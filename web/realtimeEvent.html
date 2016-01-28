@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>dase.ecnu.edu.cn/RCBA</title>
+	
+	<!-- link the css -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="css/pages/default.css" rel="stylesheet">
+    <link href="css/pages/prettify.css" rel="stylesheet">
+	<link href="css/events/main.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<!-- Nav -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  		<div class="container" id="nav-index">
+   			 <div class="navbar-header">
+      			<a class="navbar-brand" href="/RCBA"><span id="tag" class="label label-success">Back to HomePage</span></a>
+    		</div>
+    		<ul class="nav navbar-nav">
+    			<li class="active" id="navli1"><a href="#eventPanel1"><span class="glyphicon glyphicon-signal"></span> Event TimeSeries</a></li>
+				<li id="navli2"><a href="#eventPanel2"><span class="glyphicon glyphicon-user"></span> User Analytics</a></li>
+        		<li id="navli3"><a href="#eventPanel3"><span class="glyphicon glyphicon-road"></span> Location Discussion</a></li>
+        		<li id="navli4"><a href="#eventPanel4"><span class="glyphicon glyphicon-cloud"></span> WordCloud & Mood</a></li>
+    		</ul>
+  		</div>
+	</nav>
+	
+	<!-- Main -->
+	<div class="container">
+		<!-- Event TimeSeries -->
+		<div id = "eventPanel1" class="board event-panel">
+			<!-- title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-signal"></span> Event TimeSeries</h4>
+					</div>
+				</div>	
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#timeSeriesAbout" data-toggle="modal"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- content -->
+			<div class="board-content">
+				<div class="row clearfix">
+					<div class="col-md-9 col-sm-9 col-xs-9">
+						<div id="event-timeSeriesChart" class="event-chart1"></div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3" style="margin-left:-30px">
+						<div class="chart-title"><small>Event Introduction</small></div>
+						<div id="eventIntroduction" style="margin-top: 10px"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- User Analytics -->
+		<div id = "eventPanel2" class="board event-panel">
+			<!-- title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-user"></span> User Analytics</h4>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#userAbout" data-toggle="modal"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- content -->
+			<div class="board-content">
+				<div class="row clearfix">
+					<div class="col-md-3 col-sm-3 col-xs-3">
+						<div class="chart-title"><small>Fraction of Gender</small></div>
+						<div id="event-userChart1" class="event-chart2"></div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3">
+						<div class="chart-title"><small>Fraction of Vip User</small></div>
+						<div id="event-userChart2" class="event-chart2"></div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="chart-title"><small>Distribution of Platform</small></div>
+						<div id="event-userChart3" class="event-chart2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- location Discussion-->
+		<div id = "eventPanel3" class="board event-panel">
+			<!-- title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-road"></span> Location Discussion</h4>
+					</div>
+				</div>	
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#locationAbout" data-toggle="modal"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- content -->
+			<div class="board-content">
+				<div class="row clearfix">
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<div class="chart-title" style="margin-bottom:10px"><small>Number of People in Location</small></div>
+						<div id="event-locationChart" class="event-chart1"></div>
+					</div>
+					<div class="col-md-5 col-sm-5 col-xs-5">
+						<div class="chart-title" style="margin-bottom:10px"><small>Hot Origin Status</small></div>
+						<div id="event-locationTweet" class="pre-scrollable list-group-item event-chart1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- wordCloud & Mood -->
+		<div id = "eventPanel4" class="board event-panel">
+			<!-- title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-cloud"></span> WordCloud & Mood</h4>
+					</div>
+				</div>	
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#moodAbout" data-toggle="modal"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- content -->
+			<div class="board-content">
+				<div class="row clearfix">
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="chart-title"><small>Word Clouds</small></div>
+						<div id="event-cloudChart" class="event-cloudChart"></div>
+						<div style="margin-left: 100px">
+							<p id="p_keyword">
+								<label for="keyword">关键词:</label>
+								<input id="keyword" type='text' name="as_q" value="" />
+								<input id="Go" type="submit" value="搜索" name='btnG' onclick="kwsearch()" />
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="chart-title"><small>Popular Mood</small></div>
+						<div id="event-moodChart" class="event-chart1"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- check the report -->
+		<div style="margin-bottom:20px">
+			<a class="btn btn-info btn-lg btn-block" href="#checkreport" data-toggle="modal">Check The Event Report</a>
+		</div>
+	</div>
+
+	<!-- Event TimeSeries Model -->
+	<div class="modal fade" id="timeSeriesAbout" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel1">事件发展趋势模块说明：</h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1. 模块左侧为事件发展趋势图，可查看不同时间点讨论该事件的微博条数</small></h4>
+					<h4><small>1.1 左上角为图表工具选项，可帮你完成对图表不同的操作</small></h4>
+					<h4><small>1.2 上方为图例选项，可查看不同的数据段</small></h4>
+					<h4><small>1.3 下方为时间轴，拖动时间轴可查看不同时间段的数据</small></h4>
+					<h4><small>2. 模块右侧为事件介绍，可通过链接查看事件的相关新闻以及相关视频</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- User Analytics Model -->
+	<div class="modal fade" id="userAbout" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel5">用户分析模块说明：</h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1. 模块分为三个部分，分别是用户男女比例，VIP用户占比，用户平台分布</small></h4>
+					<h4><small>2. 在用户平台分布图中，可通过下方时间轴动态查看</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Location Discussion Model -->
+	<div class="modal fade" id="locationAbout" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel2">地域分析模块说明：</h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1. 模块分为两个部分，左侧为不同地域用户的讨论人数，右侧为事件相关的热门原创微博</small></h4>
+					<h4><small>2. 默认显示所有地区的热门微博，点击地图上的省份，可查看对应省份的热门微博</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mood Model -->
+	<div class="modal fade" id="moodAbout" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel3">词云分析和情绪分析模块说明：</h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1. 模块分为两个部分，左侧为事件的词云分析，右侧为民众对事件的情绪分析</small></h4>
+					<h4><small>2. 点击词云分析中的词语，并点击下方的关键词搜索按钮，可跳转到百度新闻页面查看最新的新闻内容</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Report Model -->
+	<div class="modal fade" id="checkreport" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel4">事件分析报告：</h4>
+				</div>
+				<div class="modal-body">
+					<div id="eventReport1"></div>
+					<div id="eventReport2"></div>
+					<div id="eventReport3"></div>
+					<div id="eventReport4"></div>
+					<div id="eventReport5"></div>
+					<div id="eventReport6"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="text-center">
+		Made by <a href="http://database.ecnu.edu.cn/">Center for Cloud Computing and Big Data </a>.
+		<p>ly901002@gmail.com</p>
+	</footer>
+
+	<!-- echarts -->
+	<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+	<!-- d3 -->
+	<script type="text/javascript" src="js/events/d3/d3.js"></script>
+	<script type="text/javascript" src="js/events/d3/d3.layout.cloud.js"></script>
+
+	<!-- link the js -->
+	<script type="text/javascript" src="js/pages/jquery.min.js"></script>
+	<script type="text/javascript" src="js/pages/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/pages/prettify.js"></script>
+
+	<script type="text/javascript" src="js/events/options.js"></script>
+	<script type="text/javascript" src="js/events/events.js"></script>
+	<script type="text/javascript" src="js/events/main.js"></script>
+	
+</body>
+</html>

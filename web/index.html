@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>dase.ecnu.edu.cn/RCBA</title>
+	
+	<!-- link the css -->
+    <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="css/pages/default.css" rel="stylesheet">
+    <link href="css/pages/prettify.css" rel="stylesheet">
+	<link href="css/index/main.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<!-- Nav -->
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  		<div class="container">
+   			 <div class="navbar-header">
+      			<a class="navbar-brand" href="/RCBA"><span id="tag" class="label label-success">RCBA V0.31</span></a>
+    		</div>
+    		<ul class="nav navbar-nav">
+    			<li class="active" id="navli1"><a href="#indexPanel1"><span class="glyphicon glyphicon-stats"></span> Event TimeLine</a></li>
+        		<li id="navli2"><a href="#indexPanel2"><span class="glyphicon glyphicon-cloud"></span> RealTime Event</a></li>
+        		<li ><a href="/RCBA/about.html"><span class="glyphicon glyphicon-heart"></span> About RCBA</a></li>
+    		</ul>
+  		</div>
+	</nav>
+
+	<!-- Main -->
+	<div class="container">
+		<!-- Event TimeLine -->
+		<div id = "indexPanel1" class="board index-panel">
+			<!-- Title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-stats"></span> Event TimeLine</h4>
+					</div>
+				</div>	
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#timeLineAbout" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Click to check"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- Content -->
+			<div class="board-content">
+				<div class="row clearfix">
+					<div class="col-md-9 col-sm-9 col-xs-9"><div id="eventTimeLine"></div></div>
+					<div class="col-md-3 col-sm-3 col-xs-3">
+						<!--<div class="index-tag"><p class="label label-success"> 最新最热事件</p></div>
+						<div class="list-group pre-scrollable" id = "hotFocusEvent"><div class="list-group-item">暂无事件</div></div>-->
+						<form class="form-inline">
+							<div class="form-group">
+								<label for="inputSearch" class="sr-only">Search</label>
+								<input type="text" class="form-control" id="inputSearch" placeholder="Search text, eg: '北京'">
+							</div>
+							<button type="button" class="btn btn-default" onclick="eventSearch()">Search</button>
+						</form>
+						<div class="pre-scrollable-search" id="hotFocusEvent" style="margin-top: 10px"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- RealTime Event -->
+		<div id = "indexPanel2" class="board index-panel">
+			<!-- Title -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div class="text-left text-muted">
+						<h4><span class="glyphicon glyphicon-cloud"></span> RealTime Event</h4>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-sx-4 text-right">
+					<h4><a href="#realTimeAbout" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Click to check"><span class="glyphicon glyphicon-zoom-in"></span></a></h4>
+				</div>
+			</div>
+			<!-- Content -->
+			<div class="row clearfix">
+				<div class="col-md-8 col-sm-8 col-sx-8">
+					<div id="eventChart" class="index-chart"></div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-sx-4">
+					<div class="index-tag"><p class="label label-success"> 当日热点事件</p></div>
+					<div id="eventDetail" class="pre-scrollable index-chart"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Event TimeLine Model -->
+	<div class="modal fade" id="timeLineAbout" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel1"><b>模块说明：</b></h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1.拖动时间轴可以查看相应的热门事件</small></h4>
+					<h4><small>2.右方显示为当前正在关注的事件</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- RealTime Event Model -->
+	<div class="modal fade" id="realTimeAbout" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel2"><b>模块说明：</b></h4>
+				</div>
+				<div class="modal-body">
+					<h4><small>1.图下方的时间控件可查看对应日期的事件数目</small></h4>
+					<h4><small>2.点击图中相应日期的时间点可在右方显示当天的事件信息</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<hr>
+	<footer class="text-center">
+		Made by <a href="http://database.ecnu.edu.cn/">Center for Cloud Computing and Big Data </a>.<p>ly901002@gmail.com</p>
+	</footer>
+
+	<!-- link the js -->
+	<script type="text/javascript" src="js/pages/jquery.min.js"></script>
+	<script type="text/javascript" src="js/pages/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/pages/prettify.js"></script>
+
+	<!-- echarts -->
+	<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+
+	<!-- timeline.js -->
+	<script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+
+	<script type="text/javascript" src="js/index/index.js"></script>
+	<script type="text/javascript" src="js/index/option.js"></script>
+	<script type="text/javascript" src="js/index/main.js"></script>
+</body>
+</html>

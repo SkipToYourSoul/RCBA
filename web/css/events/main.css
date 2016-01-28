@@ -1,0 +1,30 @@
+body {
+    padding-top: 70px;
+    min-width: 1000px;
+    /*width:expression(document.body.clientWidth < 1000? "1000px": "auto" );*/
+    position:relative;
+}
+
+.pre-scrollable {
+    max-height: 450px;
+    overflow-y: scroll;
+}
+
+.event-panel{
+    min-width:800px;
+}
+
+.event-chart1{
+    height: 400px;
+}
+
+.event-chart2{
+    height: 300px;
+}
+
+.event-cloudChart{
+    height: 350px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
